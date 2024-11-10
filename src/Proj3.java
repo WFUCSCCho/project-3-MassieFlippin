@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Proj3 {
@@ -40,7 +41,7 @@ public class Proj3 {
             }
             k++;
         }
-        //Copy any remaining elements of leftList and rightlift if there are any left
+        //Copy any remaining elements of leftList and right lift if there are any left
         while(i < leftlist.size()){
             a.set(k, leftlist.get(i));
             i++;
@@ -194,9 +195,6 @@ public class Proj3 {
         String algorithm = args[1]; //Sorting algorithm type
         int numLines = Integer.parseInt(args[2]); // number of lines to read in the data set
 
-        //List to hold the dataset
-        ArrayList<RealEstateData> dataList = new ArrayList<RealEstateData>();
-
         //For file input
         FileInputStream inputFileNameStream = null;
         Scanner inputFileNameScanner = null;
@@ -207,7 +205,208 @@ public class Proj3 {
 
         //Ignore the first line
         inputFileNameScanner.nextLine();
-        // Finish Me
-        //...
+        // ...
+        //create an array list to store the RealEstateData
+        ArrayList<RealEstateData> dataList = new ArrayList<RealEstateData>();
+        //Finish Me...
+        //Read the file line by line and store the data line by line.
+        for(int i = 0; i < numLines && inputFileNameScanner.hasNextLine(); i++) {
+            String line = inputFileNameScanner.nextLine().trim();//trims away any data
+            if (line.isEmpty()) continue;// skip the empty lines
+            String[] parts = line.split(",");
+            //create a new RealEstateData object
+            try {
+                if (parts.length < 16) { //if there is faulty data still continue
+                    continue;
+                }
+                //store the data
+                RealEstateData data = new RealEstateData(
+                        Integer.parseInt(parts[0]), //ID
+                        parts[1], //PossesionStatus
+                        parts[2], // Commercial
+                        parts[3], //Developer
+                        Integer.parseInt(parts[4]), //price
+                        Integer.parseInt(parts[5]), //sqftprice
+                        parts[6],//furnished
+                        Integer.parseInt(parts[7]), //bathroom
+                        parts[8], //direction facing
+                        parts[9], //transaction
+                        parts[10], //type
+                        parts[11], //city
+                        Integer.parseInt(parts[12]), // bedrooms
+                        Integer.parseInt(parts[13]), //floors
+                        parts[14], //isprimelocation
+                        parts[15]); // lifespan
+                //add data to the Array
+                dataList.add(data);
+                //Catch statement showing what lines might contain faulty data, skip and continue with insertion / search
+            }catch (NumberFormatException e) {
+                System.err.println("Error parsing line: " + line);
+            }
+        }
+        inputFileNameScanner.close();
+
+        //Print the data before sorting
+        System.out.println("Dataset before performing operations: ");
+        for (RealEstateData data : dataList) {
+            System.out.println(data);
+        }
+
+        //Execute the chosen sorting analysis
+        int swapCount = 0;
+        switch(algorithm.toLowerCase()){
+            case "bubble":
+                //Calculate the Bubble sort run time for sorted, shuffled, and reversed data sets
+                //count number of comparisons for bubble
+
+                //sort the data
+                Collections.sort(dataList);
+                //time the sorting process
+                long startTime = System.nanoTime();
+                swapCount = bubbleSort(dataList, dataList.size());
+                long endTime = System.nanoTime();
+                long Runtime = endTime - startTime;
+                System.out.println("Sorted data Bubble sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+
+                //shuffled data set
+                Collections.shuffle(dataList);
+                startTime = System.nanoTime();
+                swapCount = bubbleSort(dataList, dataList.size());
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Shuffled data Bubble sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+
+                //Reversed data set
+                Collections.reverse(dataList);
+                startTime = System.nanoTime();
+                swapCount = bubbleSort(dataList, dataList.size());
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Reversed data Bubble sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+                break;
+
+            case "transposition":
+                //Calculate the odd even sort run time for sorted, shuffled, and reversed data sets
+                //count number of comparisons for heap
+
+                //sort the data
+                Collections.sort(dataList);
+                //time the sorting process
+                startTime = System.nanoTime();
+                swapCount = transpositionSort(dataList, dataList.size());
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Sorted data transposition sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+
+                //shuffled data set
+                Collections.shuffle(dataList);
+                startTime = System.nanoTime();
+                swapCount = transpositionSort(dataList, dataList.size());
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Shuffled data transposition sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+
+                //Reversed data set
+                Collections.reverse(dataList);
+                startTime = System.nanoTime();
+                swapCount = transpositionSort(dataList, dataList.size());
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Reversed data Bubble sort run time: " + Runtime);
+                System.out.println("Number of comparisons: " + swapCount);
+                break;
+            case "merge":
+                //Calculate the Merge sort run time for sorted, shuffled, and reversed data sets
+
+                //sort the data
+                Collections.sort(dataList);
+                //time the sorting process
+                startTime = System.nanoTime();
+                mergeSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Sorted data Merge sort run time: " + Runtime);
+
+                //shuffled data set
+                Collections.shuffle(dataList);
+                startTime = System.nanoTime();
+                mergeSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Shuffled data Merge sort run time: " + Runtime);
+
+                //Reversed data set
+                Collections.reverse(dataList);
+                startTime = System.nanoTime();
+                mergeSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Reversed data Merge sort run time: " + Runtime);
+                break;
+            case "quick":
+                //Calculate the Quick sort run time for sorted, shuffled, and reversed data sets
+
+                //sort the data
+                Collections.sort(dataList);
+                //time the sorting process
+                startTime = System.nanoTime();
+                quickSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Sorted data Quick sort run time: " + Runtime);
+
+                //shuffled data set
+                Collections.shuffle(dataList);
+                startTime = System.nanoTime();
+                quickSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Shuffled data Quick sort run time: " + Runtime);
+
+                //Reversed data set
+                Collections.reverse(dataList);
+                startTime = System.nanoTime();
+                quickSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Reversed data Quick sort run time: " + Runtime);
+                break;
+            case "heap":
+                //Calculate the Heap sort run time for sorted, shuffled, and reversed data sets
+
+                //sort the data
+                Collections.sort(dataList);
+                //time the sorting process
+                startTime = System.nanoTime();
+                heapSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Sorted data Heap sort run time: " + Runtime);
+
+                //shuffled data set
+                Collections.shuffle(dataList);
+                startTime = System.nanoTime();
+                heapSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Shuffled data Heap sort run time: " + Runtime);
+
+                //Reversed data set
+                Collections.reverse(dataList);
+                startTime = System.nanoTime();
+                heapSort(dataList,0,dataList.size()-1);
+                endTime = System.nanoTime();
+                Runtime = endTime - startTime;
+                System.out.println("Reversed data Heap sort run time: " + Runtime);
+                break;
+        }
+
+
+
     }
 }
