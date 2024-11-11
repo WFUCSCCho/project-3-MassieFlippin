@@ -101,13 +101,13 @@ Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (already sorted)
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (shuffled):
 ![img_1.png](img_1.png)
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
-![img_2.png](img_2.png)
+![img_6.png](img_6.png)
 Bubble Sort and Odd-Even Transposition Sort comparison (already sorted):
-
+![img_3.png](img_3.png)
 Bubble Sort and Odd-Even Transposition Sort comparison (shuffled):
-
+![img_4.png](img_4.png)
 Bubble Sort and Odd-Even Transposition Sort comparison (reversed):
-
+![img_5.png](img_5.png)
 ## Submission:
 
 Your project will be developed and graded via GitHub. Your final "push" is your final submission, and it must occur 

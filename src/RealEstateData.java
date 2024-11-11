@@ -5,7 +5,7 @@
  * equals for checking equality between property objects and provides a toString method for generating a readable string
  * representation of property details.
  * @author: Massie Flippin
- * @date: September 26th , 2024
+ * @date: November 14th , 2024
  ************************/
 
 public class RealEstateData implements Comparable<RealEstateData> {
