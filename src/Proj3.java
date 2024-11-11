@@ -311,7 +311,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data transposition sort run time: " + Runtime);
-                writeToFile( "Shuffled data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of comparisons: " + swapCount);
                 writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
@@ -337,12 +337,14 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data transposition sort run time: " + Runtime);
-                writeToFile( "Shuffled data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of comparisons: " + swapCount);
                 writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 break;
+
+
             case "merge":
                 //Calculate the Merge sort run time for sorted, shuffled, and reversed data sets
 
@@ -354,6 +356,9 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Merge sort run time: " + Runtime);
+                writeToFile( "Sorted data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
+
 
                 //shuffled data set
                 Collections.shuffle(dataList);
@@ -362,6 +367,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Merge sort run time: " + Runtime);
+                writeToFile( "Shuffled data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
 
                 //Reversed data set
                 Collections.reverse(dataList);
@@ -370,6 +377,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Merge sort run time: " + Runtime);
+                writeToFile( "Reversed data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
                 break;
             case "quick":
                 //Calculate the Quick sort run time for sorted, shuffled, and reversed data sets
@@ -382,6 +391,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Quick sort run time: " + Runtime);
+                writeToFile( "Sorted data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
                 Collections.shuffle(dataList);
@@ -390,7 +401,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Quick sort run time: " + Runtime);
-
+                writeToFile( "Shuffled data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
                 //Reversed data set
                 Collections.reverse(dataList);
                 startTime = System.nanoTime();
@@ -398,6 +410,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Quick sort run time: " + Runtime);
+                writeToFile( "Reversed data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
                 break;
             case "heap":
                 //Calculate the Heap sort run time for sorted, shuffled, and reversed data sets
@@ -410,6 +424,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Heap sort run time: " + Runtime);
+                writeToFile( "Sorted data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
                 Collections.shuffle(dataList);
@@ -418,6 +434,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Heap sort run time: " + Runtime);
+                writeToFile( "Shuffled data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
 
                 //Reversed data set
                 Collections.reverse(dataList);
@@ -426,6 +444,8 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Heap sort run time: " + Runtime);
+                writeToFile( "Reversed data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile("\n", "./analysis.txt");
                 break;
         }
     }
