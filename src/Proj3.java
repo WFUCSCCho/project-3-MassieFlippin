@@ -1,7 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+import java.io.FileWriter;
 
 public class Proj3 {
     // Sorting Method declarations
@@ -127,6 +129,7 @@ public class Proj3 {
     public static <T extends Comparable> int bubbleSort(ArrayList<T> a, int size) {
         // Finish Me
         int swapCount = 0;
+        int comparrisonCount = 0;
         boolean swapped = false;
         //Outer loop: iterates over each element in the list
         for (int i = 0; i < size - 1; i++) {
@@ -134,6 +137,7 @@ public class Proj3 {
 
             //inner loop: compares adjacent elements
             for (int j = 1; j < size - i; j++){
+                comparrisonCount ++; //increment comparrison count
                 if (a.get(j-1).compareTo(a.get(j)) > 0){
                     //swap elements if they are in the wrong order
                     swap(a, j-1,j);
@@ -146,7 +150,7 @@ public class Proj3 {
                 break;
             }
         }
-        return swapCount;
+        return comparrisonCount;
     }
 
     static <T> void swap(ArrayList<T> a, int i, int j) {
@@ -159,6 +163,7 @@ public class Proj3 {
     public static <T extends Comparable> int transpositionSort(ArrayList<T> a, int size) {
         // Finish Me
         int swapCount = 0;
+        int comparrisonCount = 0;
         boolean isSorted;
 
         //continue sorting until no swaps are made in both phases
@@ -166,6 +171,7 @@ public class Proj3 {
             isSorted = true; //initially assume the array is sorted
             //odd phase: Compare and swap the
             for (int i = 1; i < size -1; i += 2){
+                comparrisonCount ++;
                 if (a.get(i).compareTo(a.get(i+1)) > 0){
                     swap(a, i, i+1);
                     swapCount++;
@@ -244,11 +250,19 @@ public class Proj3 {
         }
         inputFileNameScanner.close();
 
-        //Print the data before sorting
-        System.out.println("Dataset before performing operations: ");
+
+
+        //Print the data before sorting to sorted.txt. Each time it runs, it will overwrite the previous sorted list.
+        System.out.println("Sorted dataset before performing operations (Note data is sorted by price): ");
+        writeToFile("Sorted dataset before performing operations (Note data is sorted by price): ", "./sorted.txt");
+        writeToFile("\n", "./sorted.txt");
+        Collections.sort(dataList);
         for (RealEstateData data : dataList) {
+            writeToFile(String.valueOf(data), "./sorted.txt");
+            writeToFile("\n", "./sorted.txt");
             System.out.println(data);
         }
+
 
         //Execute the chosen sorting analysis
         int swapCount = 0;
@@ -267,9 +281,10 @@ public class Proj3 {
                 System.out.println("Sorted data Bubble sort run time: " + Runtime);
                 writeToFile( "Sorted data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
-                System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                System.out.println("Number of swaps: " + swapCount);
+                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+                System.out.println("Number of comparrisons: " + comparrisonCount);
 
 
                 //shuffled data set
@@ -281,8 +296,8 @@ public class Proj3 {
                 System.out.println("Shuffled data Bubble sort run time: " + Runtime);
                 writeToFile( "Shuffled data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
-                System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                System.out.println("Number of swaps: " + swapCount);
+                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
 
                 //Reversed data set
                 Collections.reverse(dataList);
@@ -294,8 +309,8 @@ public class Proj3 {
                 writeToFile("\n", "./analysis.txt");
                 writeToFile( "Reversed data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
-                System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                System.out.println("Number of swaps: " + swapCount);
+                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 break;
 
@@ -313,8 +328,8 @@ public class Proj3 {
                 System.out.println("Sorted data transposition sort run time: " + Runtime);
                 writeToFile( "Sorted data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
-                System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                System.out.println("Number of swaps: " + swapCount);
+                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
