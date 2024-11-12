@@ -315,29 +315,30 @@ public class Proj3 {
                 System.out.println("Number of swaps: " + swapCount);
                 writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
-
-                try(FileWriter writer = new FileWriter("./sorted.txt")) {
-                    writer.write("Sorted bubble list (Note data is sorted by price): ");
+                //writes to the sorted file. I will comment extensively to this section but feel comments on the other cases are uneccesary as it is essentially
+                //the same steps
+                try(FileWriter writer = new FileWriter("./sorted.txt")) { //create a new file
+                    writer.write("Sorted bubble list (Note data is sorted by price): "); //label the file name
                     writer.write(".\n");
-                    Collections.sort(dataList);
-                    bubbleSort(dataList, dataList.size());
-                    for (RealEstateData data : dataList) {
+                    Collections.sort(dataList);//sort the data
+                    bubbleSort(dataList, dataList.size()); //perform the bubblesort operation on the data
+                    for (RealEstateData data : dataList) { //print the data to the file
                         writer.write(String.valueOf(data));
                         writer.write(".\n");
                     }
                     writer.write("Shuffled bubble list (Note data is sorted by price): ");
                     writer.write(".\n");
-                    Collections.shuffle(dataList);
-                    bubbleSort(dataList, dataList.size());
-                    for (RealEstateData data : dataList) {
+                    Collections.shuffle(dataList); //shuffle the data
+                    bubbleSort(dataList, dataList.size()); //perform the sorting operation
+                    for (RealEstateData data : dataList) { //print the sorted data to the file
                         writer.write(String.valueOf(data));
                         writer.write(".\n");
                     }
                     writer.write("Reversed bubble list (Note data is sorted by price): ");
                     writer.write(".\n");
-                    Collections.reverse(dataList);
-                    bubbleSort(dataList, dataList.size());
-                    for (RealEstateData data : dataList) {
+                    Collections.reverse(dataList); //reverse the data
+                    bubbleSort(dataList, dataList.size()); //perform the sorting operation
+                    for (RealEstateData data : dataList) { //print the data
                         writer.write(String.valueOf(data));
                         writer.write(".\n");
                     }
