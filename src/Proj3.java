@@ -283,10 +283,10 @@ public class Proj3 {
                 long endTime = System.nanoTime();
                 long Runtime = endTime - startTime;
                 System.out.println("Sorted data Bubble sort run time: " + Runtime);
-                writeToFile( "Sorted data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data Bubble sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of swaps: " + swapCount);
-                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of swaps: " + (swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
 
@@ -297,10 +297,10 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Bubble sort run time: " + Runtime);
-                writeToFile( "Shuffled data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Shuffled data Bubble sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of swaps: " + swapCount);
-                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of swaps: " + (swapCount), "./analysis.txt");
 
                 //Reversed data set
                 Collections.reverse(dataList);
@@ -310,10 +310,10 @@ public class Proj3 {
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Bubble sort run time: " + Runtime);
                 writeToFile("\n", "./analysis.txt");
-                writeToFile( "Reversed data Bubble sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data Bubble sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of swaps: " + swapCount);
-                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of swaps: " + (swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 //writes to the sorted file. I will comment extensively to this section but feel comments on the other cases are uneccesary as it is essentially
                 //the same steps
@@ -357,10 +357,10 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data transposition sort run time: " + Runtime);
-                writeToFile( "Sorted data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data transposition sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of swaps: " + swapCount);
-                writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of swaps: " + (swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
@@ -370,10 +370,10 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data transposition sort run time: " + Runtime);
-                writeToFile( "Shuffled data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Shuffled data transposition sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of comparisons: " + (swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //Reversed data set
@@ -383,10 +383,10 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data transposition sort run time: " + Runtime);
-                writeToFile( "Reversed data transposition sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data transposition sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 System.out.println("Number of comparisons: " + swapCount);
-                writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
+                writeToFile( "Number of comparisons: " + (swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //Write to the sorted file
@@ -430,7 +430,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Merge sort run time: " + Runtime);
-                writeToFile( "Sorted data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data Merge sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
 
@@ -441,7 +441,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Merge sort run time: " + Runtime);
-                writeToFile( "Shuffled data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Shuffled data Merge sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //Reversed data set
@@ -451,7 +451,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Merge sort run time: " + Runtime);
-                writeToFile( "Reversed data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data Merge sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //write to the sorted file
@@ -493,7 +493,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Quick sort run time: " + Runtime);
-                writeToFile( "Sorted data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data Quick sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
@@ -503,7 +503,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Quick sort run time: " + Runtime);
-                writeToFile( "Shuffled data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Shuffled data Quick sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 //Reversed data set
                 Collections.reverse(dataList);
@@ -512,7 +512,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Quick sort run time: " + Runtime);
-                writeToFile( "Reversed data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data Quick sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 //write to the sort file
                 try(FileWriter writer = new FileWriter("./sorted.txt")) {
@@ -553,7 +553,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Sorted data Heap sort run time: " + Runtime);
-                writeToFile( "Sorted data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Sorted data Heap sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //shuffled data set
@@ -563,7 +563,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Shuffled data Heap sort run time: " + Runtime);
-                writeToFile( "Shuffled data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Shuffled data Heap sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
 
                 //Reversed data set
@@ -573,7 +573,7 @@ public class Proj3 {
                 endTime = System.nanoTime();
                 Runtime = endTime - startTime;
                 System.out.println("Reversed data Heap sort run time: " + Runtime);
-                writeToFile( "Reversed data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
+                writeToFile( "Reversed data Heap sort run time: " + (Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
                 //write to the sort file
                 try(FileWriter writer = new FileWriter("./sorted.txt")) {
