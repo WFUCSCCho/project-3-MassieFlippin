@@ -315,6 +315,33 @@ public class Proj3 {
                 System.out.println("Number of swaps: " + swapCount);
                 writeToFile( "Number of swaps: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+
+                try(FileWriter writer = new FileWriter("./sorted.txt")) {
+                    writer.write("Sorted bubble list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.sort(dataList);
+                    bubbleSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Shuffled bubble list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.shuffle(dataList);
+                    bubbleSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Reversed bubble list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.reverse(dataList);
+                    bubbleSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                }
                 break;
 
             case "transposition":
@@ -360,6 +387,34 @@ public class Proj3 {
                 System.out.println("Number of comparisons: " + swapCount);
                 writeToFile( "Number of comparisons: " + String.valueOf(swapCount), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+
+                //Write to the sorted file
+                try(FileWriter writer = new FileWriter("./sorted.txt")) {
+                    writer.write("Sorted transposition list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.sort(dataList);
+                    transpositionSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Shuffled transposition list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.shuffle(dataList);
+                    transpositionSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Reversed transposition list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.reverse(dataList);
+                    transpositionSort(dataList, dataList.size());
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                }
                 break;
 
 
@@ -397,6 +452,34 @@ public class Proj3 {
                 System.out.println("Reversed data Merge sort run time: " + Runtime);
                 writeToFile( "Reversed data Merge sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+
+                //write to the sorted file
+                try(FileWriter writer = new FileWriter("./sorted.txt")) {
+                    writer.write("Sorted merge list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.sort(dataList);
+                    mergeSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Shuffled merge list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.shuffle(dataList);
+                    mergeSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Reversed merge list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.reverse(dataList);
+                    mergeSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                }
                 break;
             case "quick":
                 //Calculate the Quick sort run time for sorted, shuffled, and reversed data sets
@@ -430,6 +513,33 @@ public class Proj3 {
                 System.out.println("Reversed data Quick sort run time: " + Runtime);
                 writeToFile( "Reversed data Quick sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+                //write to the sort file
+                try(FileWriter writer = new FileWriter("./sorted.txt")) {
+                    writer.write("Sorted quick list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.sort(dataList);
+                    quickSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Shuffled quick list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.shuffle(dataList);
+                    quickSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Reversed quick list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.reverse(dataList);
+                    quickSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                }
                 break;
             case "heap":
                 //Calculate the Heap sort run time for sorted, shuffled, and reversed data sets
@@ -464,6 +574,33 @@ public class Proj3 {
                 System.out.println("Reversed data Heap sort run time: " + Runtime);
                 writeToFile( "Reversed data Heap sort run time: " + String.valueOf(Runtime), "./analysis.txt");
                 writeToFile("\n", "./analysis.txt");
+                //write to the sort file
+                try(FileWriter writer = new FileWriter("./sorted.txt")) {
+                    writer.write("Sorted heap list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.sort(dataList);
+                    heapSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Shuffled heap list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.shuffle(dataList);
+                    heapSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                    writer.write("Reversed heap list (Note data is sorted by price): ");
+                    writer.write(".\n");
+                    Collections.reverse(dataList);
+                    heapSort(dataList,0,dataList.size()-1);
+                    for (RealEstateData data : dataList) {
+                        writer.write(String.valueOf(data));
+                        writer.write(".\n");
+                    }
+                }
                 break;
         }
     }
